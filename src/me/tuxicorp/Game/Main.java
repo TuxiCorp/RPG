@@ -21,11 +21,11 @@ public class Main extends BasicGame {
     Random random = new Random();
     LevelGeneration lg = new LevelGeneration(mapWidth, mapHeight);
     
-    private float charPosX = width / 2;
-    private float charPosY = height / 2;
+    private final int charPosX = width / 2;
+    private final int charPosY = height / 2;
     
-    public static float offsetX = 0;
-    public static float offsetY = 0;
+    public static int offsetX = 0;
+    public static int offsetY = 0;
     public int offsetSpeed = 3;
     
     public Main(String title) {
@@ -67,8 +67,8 @@ public class Main extends BasicGame {
         if (input.isKeyPressed(Input.KEY_R)) {
             lg.levelGenerator();
         }
-        int tilePosX = (int) offsetX / mapWidth;
-        int tilePosY = (int) offsetY / mapWidth;
+        int tilePosX = offsetX / mapWidth;
+        int tilePosY = offsetY / mapWidth;
         System.out.println((tilePosX + tilePosY * mapWidth) / 2);
     }
     
